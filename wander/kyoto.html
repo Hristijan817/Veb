@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the historical beauty and cultural wonders of Kyoto, Japan. Discover ancient temples, stunning gardens, and traditional tea houses.">
+    <meta name="author" content="Wander 2024">
+    <title>Kyoto, Japan - Wander 2024</title>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="kyoto.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header and Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Wander<span>2024</span></div>
+            <div class="hamburger" id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-list" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#highlights">Destinations</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section for Kyoto -->
+    <section id="home" class="kyoto-hero">
+        <div class="kyoto-hero-text">
+            <h1>Experience Kyoto</h1>
+            <p>The Cultural Heart of Japan</p>
+        </div>
+    </section>
+
+    <!-- Kyoto Introduction Section -->
+    <section class="kyoto-intro">
+        <div class="content">
+            <h2>Welcome to Kyoto</h2>
+            <p>Kyoto, the former capital of Japan, is a city of unparalleled beauty and historical significance. Home to over 1,600 Buddhist temples, stunning gardens, and traditional tea houses, Kyoto offers a serene and culturally rich experience for every traveler.</p>
+        </div>
+        <img src="images/kyoto-temple.jpg" alt="Traditional temple in Kyoto" class="kyoto-intro-img lazy-load">
+    </section>
+
+    <!-- Kyoto Highlights Section -->
+    <section id="highlights" class="kyoto-highlights">
+        <h2>Kyoto Highlights</h2>
+        <div class="highlight-grid">
+            <article class="highlight">
+                <img src="images/kyoto-cherry.jpg" alt="Cherry blossoms in Kyoto" class="highlight-img lazy-load">
+                <h3>Cherry Blossoms</h3>
+                <p>Visit Kyoto during the cherry blossom season and witness the beautiful sakura petals falling like snow.</p>
+            </article>
+            <article class="highlight">
+                <img src="images/kyoto-fushimi.jpg" alt="Fushimi Inari Shrine in Kyoto" class="highlight-img lazy-load">
+                <h3>Fushimi Inari Shrine</h3>
+                <p>Walk through the famous red Torii gates of Fushimi Inari, one of the most iconic landmarks in Japan.</p>
+            </article>
+            <article class="highlight">
+                <img src="images/kyoto-garden.jpg" alt="Zen garden in Kyoto" class="highlight-img lazy-load">
+                <h3>Zen Gardens</h3>
+                <p>Explore Kyoto's Zen gardens, where tranquility and nature blend to create peaceful retreats for reflection.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Wander Destinations. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript at the end of the body -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-list a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Lazy loading images
+        const lazyImages = document.querySelectorAll('.lazy-load');
+
+        const lazyLoad = (target) => {
+            const io = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const src = img.getAttribute('data-src');
+                        img.setAttribute('src', src);
+                        observer.disconnect();
+                    }
+                });
+            });
+
+            io.observe(target);
+        };
+
+        lazyImages.forEach(lazyLoad);
+
+        // Toggle responsive hamburger menu
+        const hamburger = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the top destinations to explore in 2024 with Wander Destinations. From stunning landscapes to vibrant cities, find your next adventure here.">
+    <meta name="author" content="Wander 2024">
+    <title>Wander 2024 - Discover Top Destinations</title>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lobster&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header and Navigation -->
+    <header role="banner" class="header">
+        <nav aria-label="Main Navigation" class="navbar">
+            <div class="logo">Wander<span>2024</span></div>
+            <ul class="nav-list">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Destinations</a>
+                    <ul class="dropdown">
+                        <li><a href="bali.html">Bali</a></li>
+                        <li><a href="kyoto.html">Kyoto</a></li>
+                        <li><a href="marrakech.html">Marrakech</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-overlay"></div>
+            <div class="hero-text">
+                <h1 id="hero-heading">Where to Wander in 2024</h1>
+                <p>Explore the top destinations for your next adventure</p>
+                <a href="#featured-destinations" class="btn-primary">Explore Destinations</a>
+            </div>
+        </section>
+
+        <!-- Featured Destinations Section -->
+        <section id="featured-destinations" class="featured-destinations" aria-labelledby="featured-heading">
+            <h2 id="featured-heading">Featured Destinations</h2>
+            <div class="destination-grid">
+                <article class="destination">
+                    <a href="bali.html">
+                        <img src="images/destination1.jpg" alt="A beautiful sunset view of Bali, Indonesia">
+                        <h3>Bali, Indonesia</h3>
+                        <p>Discover the beauty of Bali, from its tropical beaches to vibrant culture.</p>
+                    </a>
+                </article>
+                <article class="destination">
+                    <a href="kyoto.html">
+                        <img src="images/destination2.jpg" alt="A peaceful temple in Kyoto, Japan">
+                        <h3>Kyoto, Japan</h3>
+                        <p>Explore the historical temples, traditional tea houses, and serene landscapes of Kyoto.</p>
+                    </a>
+                </article>
+                <article class="destination">
+                    <a href="marrakech.html">
+                        <img src="images/destination3.jpg" alt="The colorful markets of Marrakech, Morocco">
+                        <h3>Marrakech, Morocco</h3>
+                        <p>Immerse yourself in the rich culture and bustling markets of Marrakech.</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <h2>Travel Inspiration Gallery</h2>
+            <div class="gallery-grid">
+                <img src="images/gallery1.jpg" alt="Scenic Mountain">
+                <img src="images/gallery2.jpg" alt="Beautiful Beach">
+                <img src="images/gallery3.jpg" alt="Colorful Market">
+                <img src="images/gallery4.jpg" alt="Ancient Temple">
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>What Our Travelers Say</h2>
+            <div class="testimonials-carousel">
+                <div class="testimonial">
+                    <p>"Wander 2024 helped me discover some of the most beautiful places I've ever been!"</p>
+                    <span>— Sarah L.</span>
+                </div>
+                <div class="testimonial">
+                    <p>"The travel guides and recommendations were spot on. I'll definitely use this site again."</p>
+                    <span>— James R.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription -->
+        <section class="newsletter">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest travel news and exclusive deals.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <!-- Back to Top Button -->
+        <button id="back-to-top-btn" class="back-to-top-btn">⬆</button>
+
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo" class="footer">
+        <p>&copy; 2024 Wander Destinations. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Animate Hero Text and Button on Page Load
+        window.addEventListener('load', function () {
+            const heroText = document.querySelector('.hero-text');
+            heroText.classList.add('fade-in');
+        });
+
+        // Smooth Scroll for Back-to-Top Button
+        const backToTopBtn = document.getElementById('back-to-top-btn');
+        window.onscroll = function () {
+            if (window.pageYOffset > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+        backToTopBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Dropdown Menu Fade In/Out
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown');
+        dropdownToggle.addEventListener('mouseover', function () {
+            dropdownMenu.style.opacity = '1';
+            dropdownMenu.style.display = 'block';
+        });
+        dropdownToggle.addEventListener('mouseout', function () {
+            dropdownMenu.style.opacity = '0';
+            dropdownMenu.style.display = 'none';
+        });
+
+        // Testimonial Carousel
+        let currentIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        setInterval(() => {
+            testimonials[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            testimonials[currentIndex].style.display = 'block';
+        }, 3000);
+
+        // Newsletter Email Validation
+        const newsletterForm = document.getElementById('newsletter-form');
+        newsletterForm.addEventListener('submit', function (e) {
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const emailValue = emailInput.value;
+            const emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            if (!emailPattern.test(emailValue)) {
+                e.preventDefault();
+                alert('Please enter a valid email address.');
+            }
+        });
+    </script>
+</body>
+
+</html>

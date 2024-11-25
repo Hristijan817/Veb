@@ -1,0 +1,215 @@
+ /* General Reset */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #ffccbc);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Section */
+.header {
+  background-color: #ff7043;
+  padding: 20px 40px;
+  border-bottom: 3px solid #f4511e;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.logo span {
+  color: #ffe082;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-list a:hover {
+  background-color: #ffe082;
+  border-radius: 20px;
+  color: #333;
+}
+
+.nav-list .active {
+  font-weight: 600;
+  border-bottom: 2px solid #fff;
+}
+
+/* Wavy Background Section */
+.about-section {
+  padding: 120px 40px 60px;
+  background: linear-gradient(135deg, #ffe082, #ffca28);
+  text-align: center;
+  position: relative;
+}
+
+.about-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('images/wave-top.svg') no-repeat top center;
+  background-size: cover;
+}
+
+.about-section:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('images/wave-bottom.svg') no-repeat bottom center;
+  background-size: cover;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.about-section h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Team Section */
+.team-section {
+  padding: 60px 40px;
+  background-color: #4db6ac;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.team-section:before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('images/wave-top.svg') no-repeat top center;
+  background-size: cover;
+}
+
+.team-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+/* Team Grid for Team Members */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Styling for Each Team Member */
+.team-member {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  color: #333;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+}
+
+.team-member img {
+  width: 100%;
+  height: 350px; /* Adjust height based on your preference */
+  object-fit: contain; /* Ensures the entire image is visible without cropping */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background-color: #f0f0f0; /* Adds a background color in case the aspect ratio differs */
+}
+
+
+.team-member h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Footer Section */
+.footer {
+  padding: 20px;
+  background-color: #ff7043;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  margin-top: 40px;
+}
+
+.footer a {
+  color: #ffe082;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer:before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('images/wave-bottom.svg') no-repeat top center;
+  background-size: cover;
+}
